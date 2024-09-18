@@ -97,7 +97,7 @@ apt install nano
 ```
 Отредактировал файл:
 
-![7](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-7.png)
+![7](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-7.png)
 
 Перезапустил nginx. Проверил доступность страницы внутри контейнера. Проверил доступность страницы с хостовой машины:
 
