@@ -26,7 +26,7 @@ Hey, Netology
 
 ### Ответ:
 
-[Docker файл](https://github.com/Lex-Chaos/Docker-hw/blob/main/files/Docker)
+[Docker файл](https://github.com/Lex-Chaos/Docker-hw/blob/master/files/Docker)
 
 [Ссылка на репозиторий docker hub](https://hub.docker.com/repository/docker/aaborovik/custom-nginx/general)
 
@@ -49,17 +49,17 @@ Hey, Netology
 
 1. Запуск контенера
 
-![Запуск контенера](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task2-1-1.png)
+![Запуск контенера](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task2-1-1.png)
 
-![Запуск контенера](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task2-1-2.png)
+![Запуск контенера](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task2-1-2.png)
 
 2. Переименование контенера
 
-![Переименование контенера](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task2-2.png)
+![Переименование контенера](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task2-2.png)
 
 3. Команда и доступность страницы
 
-![Команда и доступность страницы](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task2-3+4.png)
+![Команда и доступность страницы](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task2-3+4.png)
 
 ## Задача 3
 
@@ -80,7 +80,7 @@ Hey, Netology
 
 ### Ответ
 
-![1+2+3](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-1+2+3.png)
+![1+2+3](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-1+2+3.png)
 
 Контейнер остановился, потому что в его стандартный поток был послан сигнал остановки.
 
@@ -101,24 +101,24 @@ apt install nano
 
 Перезапустил nginx. Проверил доступность страницы внутри контейнера. Проверил доступность страницы с хостовой машины:
 
-![8+9+10](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-8+9+10.png)
+![8+9+10](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-8+9+10.png)
 
 Проблема в том, что nginx работает на порту 81.
 
 Исправил конфигурацию контейнера согласно источнику:
 
-![11-1](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-11-1.png)
+![11-1](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-1.png)
 
-![11-2](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-11-2.png)
+![11-2](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-2.png)
 
-![11-3](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-11-3.png)
+![11-3](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-3.png)
 
-![11-4](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-11-4.png)
+![11-4](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-4.png)
 
-![11-5](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-11-5.png)
+![11-5](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-5.png)
 
 Удалил контейнер не останавливая:
 
-![12](https://github.com/Lex-Chaos/Docker-hw/blob/main/img/Task3-12.png)
+![12](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-12.png)
 
 ---
