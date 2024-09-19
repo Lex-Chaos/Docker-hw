@@ -26,7 +26,7 @@ Hey, Netology
 
 ### Ответ:
 
-![Docker файл](https://github.com/Lex-Chaos/Docker-hw/blob/master/files/Docker)
+[Docker файл](https://github.com/Lex-Chaos/Docker-hw/blob/master/files/Docker)
 
 [Ссылка на репозиторий docker hub](https://hub.docker.com/repository/docker/aaborovik/custom-nginx/general)
 
@@ -213,7 +213,7 @@ services:
 
 2. Отредактировал файл compose.yaml, добавив туда секцию `include`:
 
-![Compose](https://github.com/Lex-Chaos/Docker-hw/blob/master/files/compose.yaml)
+[Файл Compose](https://github.com/Lex-Chaos/Docker-hw/blob/master/files/compose.yaml)
 
 В результате в него были включены директивы из docker-compose.yaml
 
