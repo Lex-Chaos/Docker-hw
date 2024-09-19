@@ -26,7 +26,7 @@ Hey, Netology
 
 ### Ответ:
 
-[Docker файл](https://github.com/Lex-Chaos/Docker-hw/blob/master/files/Docker)
+![Docker файл](https://github.com/Lex-Chaos/Docker-hw/blob/master/files/Docker)
 
 [Ссылка на репозиторий docker hub](https://hub.docker.com/repository/docker/aaborovik/custom-nginx/general)
 
@@ -80,7 +80,7 @@ Hey, Netology
 
 ### Ответ
 
-![1+2+3](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-1+2+3.png)
+![3-1+2+3](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-1+2+3.png)
 
 Контейнер остановился, потому что в его стандартный поток был послан сигнал остановки.
 
@@ -97,28 +97,154 @@ apt install nano
 ```
 Отредактировал файл:
 
-![7](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-7.png)
+![3-7](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-7.png)
 
 Перезапустил nginx. Проверил доступность страницы внутри контейнера. Проверил доступность страницы с хостовой машины:
 
-![8+9+10](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-8+9+10.png)
+![3-8+9+10](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-8+9+10.png)
 
 Проблема в том, что nginx работает на порту 81.
 
 Исправил конфигурацию контейнера согласно источнику:
 
-![11-1](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-1.png)
+![3-11-1](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-1.png)
 
-![11-2](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-2.png)
+![3-11-2](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-2.png)
 
-![11-3](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-3.png)
+![3-11-3](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-3.png)
 
-![11-4](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-4.png)
+![3-11-4](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-4.png)
 
-![11-5](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-5.png)
+![3-11-5](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-11-5.png)
 
 Удалил контейнер не останавливая:
 
-![12](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-12.png)
+![3-12](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task3-12.png)
+
+## Задача 4
+- Запустите первый контейнер из образа centos c любым тегом в фоновом режиме, подключив папку текущий рабочий каталог $(pwd) на хостовой машине в /data контейнера,используя ключ -v.
+- Запустите второй контейнер из образа debian в фоновом режиме, подключив текущий рабочий каталог $(pwd) в /data контейнера.
+- Подключитесь к первому контейнеру с помощью docker exec и создайте текстовый файл любого содержания в /data.
+- Добавьте ещё один файл в текущий каталог $(pwd) на хостовой машине.
+- Подключитесь во второй контейнер и отобразите листинг и содержание файлов в /data контейнера.
+- В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+
+### Ответ
+
+Запустил контейнеры:
+
+![4-1-1](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task4-1-1.png)
+
+![4-1-2](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task4-1-2.png)
+
+Подключился к первому контейнеру и создал файл test1.txt:
+
+![4-1-3](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task4-1-3.png)
+
+Создал в папке на хостовой машине файл test2.txt
+
+![4-1-4](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task4-1-4.png)
+
+Проверил наличие файлов во втором контейнере:
+
+![4-1-5](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task4-1-5.png)
+
+## Задача 5
+
+1. Создайте отдельную директорию(например /tmp/netology/docker/task5) и 2 файла внутри него. "compose.yaml" с содержимым:
+
+```
+version: "3"
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    network_mode: host
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+```
+
+"docker-compose.yaml" с содержимым:
+
+```
+version: "3"
+services:
+  registry:
+    image: registry:2
+    network_mode: host
+    ports:
+    - "5000:5000"
+```
+
+И выполните команду "docker compose up -d". Какой из файлов был запущен и почему? (подсказка: https://docs.docker.com/compose/compose-application-model/#the-compose-file )
+
+2. Отредактируйте файл compose.yaml так, чтобы были запущенны оба файла. (подсказка: https://docs.docker.com/compose/compose-file/14-include/)
+
+3. Выполните в консоли вашей хостовой ОС необходимые команды чтобы залить образ custom-nginx как custom-nginx:latest в запущенное вами, локальное registry. Дополнительная документация: https://distribution.github.io/distribution/about/deploying/
+
+4. Откройте страницу "https://127.0.0.1:9000" и произведите начальную настройку portainer.(логин и пароль адмнистратора)
+
+5. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
+
+```
+version: '3'
+
+services:
+  nginx:
+    image: 127.0.0.1:5000/custom-nginx
+    ports:
+      - "9090:80"
+```
+
+6. Перейдите на страницу "http://127.0.0.1:9000/#!/2/docker/containers", выберите контейнер с nginx и нажмите на кнопку "inspect". В представлении <> Tree разверните поле "Config" и сделайте скриншот от поля "AppArmorProfile" до "Driver".
+
+7. Удалите любой из манифестов компоуза(например compose.yaml). Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
+
+В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
+
+### Ответ
+
+1. Создал проект:
+
+![5-1](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-1.png)
+
+Был запущен только файл compose.yaml, потому что при наличии файлов compose.yaml и docker-compose.yaml по умолчанию выбирается файл compose.yaml
+
+2. Отредактировал файл compose.yaml, добавив туда секцию `include`:
+
+![Compose](https://github.com/Lex-Chaos/Docker-hw/blob/master/files/compose.yaml)
+
+В результате в него были включены директивы из docker-compose.yaml
+
+![5-2](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-2.png)
+
+3. Залил образ custom-nginx в локальное registry
+
+![5-3-1](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-3-1.png)
+
+![5-3-2](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-3-2.png)
+
+4. Начальная настройка portainer:
+
+![5-4](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-4.png)
+
+5-6. Снимок поля config:
+
+![5-6](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-6.png)
+
+7. Удалил compose.yaml
+
+![5-7-1](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-7-1.png)
+
+Предупреждение показывает, что в проекте остались контейнеры, которые не связаны с сервисами в манифесте. Выполнил, как предложено команду `docker compose up -d --remove-orphans`
+
+![5-7-2](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-7-2.png)
+
+Погасил проект:
+
+![5-7-3](https://github.com/Lex-Chaos/Docker-hw/blob/master/img/Task5-7-3.png)
+
+Если не выполнять команду, предложенную ранее, то можно было бы погасить проект командой `docker compose down -d --remove-orphans`
 
 ---
